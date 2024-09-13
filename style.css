@@ -1,0 +1,295 @@
+/* General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: black;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* Header & Navigation */
+#header {
+    position: sticky;
+    width: 100%;
+    background-color: #000;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000;
+    position: relative; 
+}
+
+.site-name {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+}
+
+#header-icon {
+    height: 40px; /* Adjust size as needed */
+    margin-right: 10px;
+}
+
+.site-name a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.site-name h2 {
+    margin: 0;
+    font-size: 1.5em; /* Adjust font size as needed */
+}
+
+
+.navbar {
+    display: flex;
+    flex: 1;
+    justify-content: center; /* Center the navigation links */
+    position: relative;
+}
+
+.nav-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+    display: flex;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #444;
+    color: #29f7a8; /* Change color on hover */
+}
+
+.dropdown-menu, .deep-dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #222;
+    min-width: 160px;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1001; /* Ensure dropdown is on top */
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    border-bottom: 1px solid #444;
+}
+
+.dropdown-menu a {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background-color: #333;
+    color: #29f7a8; /* Change color on hover */
+}
+
+.dropdown-submenu:hover .deep-dropdown-menu {
+    display: block;
+    top: 0;
+    left: 100%;
+}
+
+.deep-dropdown-menu a {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.deep-dropdown-menu a:hover {
+    background-color: #333;
+    color: #29f7a8; /* Change color on hover */
+}
+
+/* Social Media */
+.social-media {
+    display: flex;
+    align-items: center;
+}
+
+.social-media a {
+    color: white;
+    font-size: 1.5em;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: #29f7a8; /* Change color on hover */
+}
+
+/* Hero Section */
+#hero-section {
+    background: url('Images/hero-bg.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+}
+
+#hero-section h2 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+#hero-section p {
+    font-size: 1.2em;
+}
+
+.button {
+    display: inline-block;
+    padding: 20px 20px;
+    margin-top: 20px;
+    background-color: #29f7a8; /* Button color updated */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+    background-color: #29f7a8; /* Button hover color updated */
+    transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+/* Gallery Section */
+#gallery-section {
+    padding: 20px;
+}
+
+.img-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.img-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.img-container img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fdfbfb;
+    margin-left: auto;
+}
+
+/* Hide the checkbox */
+.menu-toggle {
+    display: none;
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    #menu-toggle:checked + .menu-btn + .navbar {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: #000;
+        position: absolute; /* Ensure menu is positioned correctly */
+        top: 60px; /* Adjust top value to align with header height */
+        left: 0;
+        z-index: 1000; /* Ensure menu is on top */
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav-links li {
+        border-bottom: 1px solid #444;
+    }
+
+    .social-media {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #hero-section h2 {
+        font-size: 2em;
+    }
+
+    #hero-section p {
+        font-size: 1em;
+    }
+
+    .button {
+        padding: 15px 15px;
+        font-size: 1em;
+    }
+}

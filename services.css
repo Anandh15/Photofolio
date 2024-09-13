@@ -1,0 +1,478 @@
+/* General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: black;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* Header & Navigation */
+#header {
+    position: sticky;
+    width: 100%;
+    background-color: #000;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000;
+    position: relative;
+}
+
+.site-name {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+}
+
+#header-icon {
+    height: 40px;
+    /* Adjust size as needed */
+    margin-right: 10px;
+}
+
+.site-name a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.site-name h2 {
+    margin: 0;
+    font-size: 1.5em;
+    /* Adjust font size as needed */
+}
+
+
+.navbar {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    /* Center the navigation links */
+    position: relative;
+}
+
+.nav-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+    display: flex;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #444;
+    color: #29f7a8;
+    /* Change color on hover */
+}
+
+.dropdown-menu,
+.deep-dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #222;
+    min-width: 160px;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    /* Ensure dropdown is on top */
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    border-bottom: 1px solid #444;
+}
+
+.dropdown-menu a {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background-color: #333;
+    color: #29f7a8;
+    /* Change color on hover */
+}
+
+.dropdown-submenu:hover .deep-dropdown-menu {
+    display: block;
+    top: 0;
+    left: 100%;
+}
+
+.deep-dropdown-menu a {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.deep-dropdown-menu a:hover {
+    background-color: #333;
+    color: #29f7a8;
+    /* Change color on hover */
+}
+
+/* Social Media */
+.social-media {
+    display: flex;
+    align-items: center;
+}
+
+.social-media a {
+    color: white;
+    font-size: 1.5em;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: #29f7a8;
+    /* Change color on hover */
+}
+
+/* Service Section */
+#services {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    padding: 50px 20px; /* Add padding around the section */
+    color: white; /* Text color for the section */
+    margin-top: 50px; /* Margin on top of the section */
+}
+
+#services .container{
+    max-width: auto; /* Optional: Restrict max-width for content alignment */
+    text-align: center; /* Center align text */
+    
+}
+
+#services h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#services p {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+.button {
+    display: inline-block;
+    padding: 20px 20px;
+    margin-top: 20px;
+    background-color: #29f7a8; /* Button color updated */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+    background-color: #29f7a8; /* Button hover color updated */
+    transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+/* Breadcrumb Navigation */
+.breadcrumbs {
+    width: 100%;
+    background-color: #333;
+    /* Background color for the breadcrumb */
+    color: white;
+    /* Text color */
+    padding: 10px 0;
+    /* Vertical padding */
+    box-sizing: border-box;
+    /* Ensure padding is included in the total width */
+}
+
+.breadcrumbs .container {
+    width: 100%;
+    max-width: 1200px;
+    /* Optional: Restrict max-width for content alignment */
+    margin: 0 auto;
+    /* Center the container horizontally */
+    padding: 0 20px;
+    /* Horizontal padding */
+}
+
+.breadcrumbs ol {
+    list-style-type: none;
+    /* Remove default list styling */
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumbs li {
+    margin: 0;
+    padding: 0;
+}
+
+.breadcrumbs a {
+    text-decoration: none;
+    /* Remove underline from links */
+    color: #29f7a8;
+    /* Green color for links */
+    transition: color 0.3s;
+    /* Smooth color transition */
+}
+
+.breadcrumbs a:hover {
+    color: #4CAF50;
+    /* Optional: Different color on hover */
+}
+
+.breadcrumbs .current {
+    color: white;
+    /* White color for the current page */
+    font-weight: bold;
+    /* Make the current page stand out */
+}
+
+.breadcrumbs ol li+li::before {
+    content: ' / ';
+    /* Separator between breadcrumbs */
+    color: white;
+    /* Color of the separator */
+    margin: 0 10px;
+    /* Spacing around the separator */
+}
+
+/*Services Section*/
+.services-container {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.services-container h2{
+    font-size: 15px;
+    color: #333;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 100px;
+}
+.services-container p{
+    font-size: 36px;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 100px;
+}
+
+/* Flexbox for services */
+.services-wrapper {
+    margin-top: 90px;
+    margin-bottom: 90px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers the entire services block */
+    gap: 30px; /* Adjust spacing between items */
+}
+
+/* Style individual services */
+.service {
+    flex: 0 1 45%; /* Each service takes about 45% width, allowing two per row */
+    text-align: center;
+    display: flex;
+    justify-content: space-between; /* Spaces h3 and h4 evenly */
+    align-items: center; /* Aligns h3 and h4 vertically */
+}
+
+/* Style for h3 and h4 within the service */
+.service h3 {
+    font-size: 1.4em;
+    color: white;
+    margin: 0; /* Removes default margin */
+}
+
+.service h4 {
+    font-size: 1.2em;
+    color: #29f7a8;
+    margin: 0; /* Removes default margin */
+}
+
+/* Responsive layout: Stack services vertically on smaller screens */
+@media (max-width: 768px) {
+    .service {
+        flex: 0 1 100%; /* Full width on smaller screens */
+        flex-direction: column; /* Stacks h3 and h4 vertically */
+    }
+}
+
+
+
+
+/* Testimonials Section */
+#testimonials {
+    padding: 20px;
+    text-align: center;
+}
+
+.container-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container-title h2 {
+    font-size: 15px;
+    color: #333;
+}
+
+.container-title p {
+    font-size: 36px;
+}
+
+/* Container for the slideshow */
+.slideshow-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%; /* Full width of the parent container */
+    max-width: 500px; /* Maximum width of the slideshow container */
+    margin: 0 auto; /* Center the container */
+    height: 500px; /* Adjust height as needed */
+}
+
+/* Wrapper for slides to rotate horizontally */
+.slide-wrapper {
+    display: flex;
+    width: 200%; /* Total width for 4 slides (100% each) */
+    animation: rotate 32s infinite; /* Adjust duration for slower rotation */
+}
+
+/* Style for each slide */
+.slide {
+    flex: 0 0 85%; /* Each slide takes up 100% of the container's width */
+    background-color: black;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: 100%; /* Adjust to fit the container height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style for images */
+.slide img {
+    max-width: 90%; /* Adjust width as needed */
+    max-height: 80%; /* Adjust height as needed */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    border-radius: 5px; /* Reduced border-radius for smaller border effect */
+    border: 2px solid #fff; /* Adjust border size and color as needed */
+}
+
+/* Rotational Animation */
+@keyframes rotate {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-100%); }
+    50% { transform: translateX(-200%); }
+    75% { transform: translateX(-300%); }
+    100% { transform: translateX(0); }
+}
+
+
+/* Footer */
+/* Footer */
+footer {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Hide the actual checkbox */
+.menu-toggle {
+    display: none;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fdfbfb;
+    margin-left: auto;
+}
+
+/* Hide the checkbox */
+.menu-toggle {
+    display: none;
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    #menu-toggle:checked+.menu-btn+.navbar {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: #000;
+        position: absolute;
+        /* Ensure menu is positioned correctly */
+        top: 60px;
+        /* Adjust top value to align with header height */
+        left: 0;
+        z-index: 1000;
+        /* Ensure menu is on top */
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav-links li {
+        border-bottom: 1px solid #444;
+    }
+
+    .social-media {
+        display: none;
+    }
+}

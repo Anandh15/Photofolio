@@ -1,0 +1,510 @@
+/* General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: black;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* Header & Navigation */
+.header {
+    position: sticky;
+    width: 100%;
+    background-color: #000;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000;
+    position: relative; /* Make sure it is positioned relative for the menu button */
+}
+
+.site-name {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+}
+
+#header-icon {
+    height: 40px; /* Adjust size as needed */
+    margin-right: 10px;
+}
+
+.site-name a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.site-name h2 {
+    margin: 0;
+    font-size: 1.5em; /* Adjust font size as needed */
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    flex: 1;
+    justify-content: center; /* Center the navigation links */
+    position: relative;
+}
+
+.nav-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #444;
+    color: #29f7a8; /* Change color on hover */
+}
+
+/* Dropdown Menus */
+.dropdown-menu, .deep-dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #222; /* Changed to dark background */
+    color: white;
+    min-width: 160px;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1001; /* Ensure dropdown is on top */
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    border-bottom: 1px solid #444;
+}
+
+.dropdown-menu a {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background-color: #333;
+    color: #29f7a8; /* Change color on hover */
+}
+
+.dropdown-submenu:hover .deep-dropdown-menu {
+    display: block;
+    top: 0;
+    left: 100%;
+}
+
+.deep-dropdown-menu a {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.deep-dropdown-menu a:hover {
+    background-color: #333;
+    color: #29f7a8; /* Change color on hover */
+}
+
+/* Social Media */
+.social-media {
+    display: flex;
+    align-items: center;
+}
+
+.social-media a {
+    color: white;
+    font-size: 1.5em;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: #29f7a8; /* Change color on hover */
+}
+
+/* About Section */
+#about {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    padding: 50px 20px; /* Add padding around the section */
+    color: white; /* Text color for the section */
+    margin-top: 50px; /* Margin on top of the section */
+}
+
+#about .container {
+    max-width: 800px; /* Optional: Restrict max-width for content alignment */
+    text-align: center; /* Center align text */
+}
+
+#about h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#about p {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.button {
+    display: inline-block;
+    padding: 20px 20px;
+    margin-top: 20px;
+    background-color: #29f7a8; /* Button color updated */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+    background-color: #29f7a8; /* Button hover color updated */
+    transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+/* Breadcrumb Navigation */
+.breadcrumbs {
+    width: 100%;
+    background-color: #333; /* Background color for the breadcrumb */
+    color: white; /* Text color */
+    padding: 10px 0; /* Vertical padding */
+    box-sizing: border-box; /* Ensure padding is included in the total width */
+}
+
+.breadcrumbs .container {
+    width: 100%;
+    max-width: 1200px; /* Optional: Restrict max-width for content alignment */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 0 20px; /* Horizontal padding */
+}
+
+.breadcrumbs ol {
+    list-style-type: none; /* Remove default list styling */
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumbs li {
+    margin: 0;
+    padding: 0;
+}
+
+.breadcrumbs a {
+    text-decoration: none; /* Remove underline from links */
+    color: #29f7a8; /* Green color for links */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.breadcrumbs a:hover {
+    color: #4CAF50; /* Optional: Different color on hover */
+}
+
+.breadcrumbs .current {
+    color: white; /* White color for the current page */
+    font-weight: bold; /* Make the current page stand out */
+}
+
+.breadcrumbs ol li + li::before {
+    content: ' / '; /* Separator between breadcrumbs */
+    color: white; /* Color of the separator */
+    margin: 0 10px; /* Spacing around the separator */
+}
+
+/* Container for Centering */
+.center-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Align items at the start */
+    width: 100%;
+}
+
+/* Profile Section */
+#about-section {
+    display: flex;
+    align-items: flex-start;
+    margin: 20px;
+    padding: 20px;
+    gap: 20px; /* Adds space between profile and content */
+    max-width: 1200px; /* Optional: Restrict max-width to avoid too wide */
+}
+
+/* Profile Image */
+.profile {
+    flex: 1;
+    max-width: 200px;
+    margin-right: 20px;
+}
+
+.profile img {
+    width: 200px;
+    height: 350px;
+    padding-top: 10px;
+    border-radius: 5%;
+    object-fit: cover;
+}
+
+/* Content Section */
+.content {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+/* Detail Section */
+.detail {
+    margin-bottom: 20px;
+}
+
+.detail h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.detail p {
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+/* Info and Info-2 Section */
+.info-container {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+}
+
+.info, .info-2 {
+    flex: 1;
+}
+
+.info ul, .info-2 ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.info li, .info-2 li {
+    margin-bottom: 10px;
+}
+
+/* General styling for the testimonials section */
+#testimonials {
+    padding: 20px;
+    text-align: center;
+}
+
+.container-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container-title h2 {
+    font-size: 15px;
+    color: #333;
+}
+
+.container-title p {
+    font-size: 36px;
+}
+
+/* Container for the slideshow */
+.slideshow-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%; /* Full width of the parent container */
+    max-width: 500px; /* Maximum width of the slideshow container */
+    margin: 0 auto; /* Center the container */
+    height: 500px; /* Adjust height as needed */
+}
+
+/* Wrapper for slides to rotate horizontally */
+.slide-wrapper {
+    display: flex;
+    width: 200%; /* Total width for 4 slides (100% each) */
+    animation: rotate 32s infinite; /* Adjust duration for slower rotation */
+}
+
+/* Style for each slide */
+.slide {
+    flex: 0 0 85%; /* Each slide takes up 100% of the container's width */
+    background-color: black;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: 100%; /* Adjust to fit the container height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style for images */
+.slide img {
+    max-width: 90%; /* Adjust width as needed */
+    max-height: 80%; /* Adjust height as needed */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    border-radius: 5px; /* Reduced border-radius for smaller border effect */
+    border: 2px solid #fff; /* Adjust border size and color as needed */
+}
+
+/* Rotational Animation */
+@keyframes rotate {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-100%); }
+    50% { transform: translateX(-200%); }
+    75% { transform: translateX(-300%); }
+    100% { transform: translateX(0); }
+}
+
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+/* Hide the actual checkbox */
+.menu-toggle {
+    display: none;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fdfbfb;
+    margin-left: auto;
+}
+
+/* Hide the checkbox */
+.menu-toggle {
+    display: none;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    #menu-toggle:checked + .menu-btn + .navbar {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: #000;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 1000;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav-links li {
+        border-bottom: 1px solid #444;
+    }
+
+    .social-media {
+        display: none;
+    }
+
+    .menu-toggle:checked + .menu-btn + .navbar {
+        display: flex;
+    }
+
+    /* Update #about-section for responsive layout */
+    #about-section {
+        flex-direction: column; /* Stack profile and content vertically */
+        align-items: center; /* Center items horizontally */
+        text-align: center; /* Center text alignment */
+    }
+
+    .profile {
+        max-width: 100%; /* Allow the profile image to take full width */
+        margin-bottom: 20px; /* Add spacing between profile and content */
+    }
+
+    .content {
+        flex: none; /* Remove the flex-basis to allow full-width stacking */
+        width: 100%; /* Ensure content takes full width */
+    }
+
+    .info-container {
+        flex-direction: column; /* Stack info sections vertically */
+        gap: 10px; /* Adjust gap between info sections */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #about-section h2 {
+        font-size: 2em;
+    }
+
+    #about-section p {
+        font-size: 1em;
+    }
+
+    .button {
+        padding: 15px 15px;
+        font-size: 1em;
+    }
+
+    /* Further reduce sizes for smaller screens */
+    .profile img {
+        width: 100%;
+        height: auto;
+        letter-spacing: 5px;
+    }
+}
